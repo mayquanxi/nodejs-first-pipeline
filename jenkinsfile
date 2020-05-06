@@ -1,14 +1,9 @@
 pipeline {
     agent { docker { image 'node:6.3' } }
     stages {
-        stage('alias'){
-            steps {
-              alias docker="/var/jenkins_home/docker/docker -H=192.168.168.1:4243"
-            }
-        }
         stage('build') {
             steps {
-                sh 'npm --version'
+              whoami
             }
         }
     }
